@@ -97,3 +97,5 @@ Then visit http://localhost:3000
 
 - **Email:** `admin@nexmart.com`
 - **Password:** `admin123`
+
+# Trigger Vercel Build
