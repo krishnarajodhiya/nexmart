@@ -41,10 +41,16 @@ export default function RegisterPage() {
                 {/* Left - Benefits */}
                 <div>
                     <Link href="/" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '32px' }}>
-                        <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 30px rgba(139,92,246,0.4)' }}>
-                            <Zap size={24} color="white" fill="white" />
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)' }}>
+                            <svg width="44" height="44" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M10 10V7C10 3.68629 12.6863 1 16 1C19.3137 1 22 3.68629 22 7V10" />
+                                    <path d="M6 10H26L28 30H4L6 10Z" fill="var(--bg-card)" />
+                                    <path d="M18 12L12 20H16L14 26L20 18H16L18 12Z" fill="currentColor" stroke="none" />
+                                </g>
+                            </svg>
                         </div>
-                        <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '26px', background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>NexMart</span>
+                        <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '28px', letterSpacing: '-0.5px', color: 'var(--text-primary)' }}>NexMart</span>
                     </Link>
                     <h1 style={{ margin: '0 0 16px', fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 900, fontFamily: 'Outfit, sans-serif', lineHeight: 1.2 }}>
                         Join the future of <span className="gradient-text">shopping</span>

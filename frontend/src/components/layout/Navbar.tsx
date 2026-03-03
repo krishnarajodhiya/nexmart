@@ -78,14 +78,21 @@ export default function Navbar() {
                         <Link href="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                 <div style={{
-                                    width: '36px', height: '36px', borderRadius: '10px',
-                                    background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    boxShadow: '0 0 20px rgba(139, 92, 246, 0.4)'
+                                    color: 'var(--text-primary)'
                                 }}>
-                                    <Zap size={20} color="white" fill="white" />
+                                    <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            {/* Bag handles */}
+                                            <path d="M10 10V7C10 3.68629 12.6863 1 16 1C19.3137 1 22 3.68629 22 7V10" />
+                                            {/* Bag body */}
+                                            <path d="M6 10H26L28 30H4L6 10Z" fill="var(--bg-card)" />
+                                            {/* Lightning bolt */}
+                                            <path d="M18 12L12 20H16L14 26L20 18H16L18 12Z" fill="currentColor" stroke="none" />
+                                        </g>
+                                    </svg>
                                 </div>
-                                <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '22px', background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                                <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '24px', letterSpacing: '-0.5px', color: 'var(--text-primary)' }}>
                                     NexMart
                                 </span>
                             </div>
