@@ -191,13 +191,12 @@ export default function ProductDetailPage() {
 
                         {/* Price */}
                         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '28px', padding: '20px', background: 'var(--bg-card)', borderRadius: '16px', border: '1px solid var(--border)' }}>
-                            <span style={{ fontSize: '36px', fontWeight: 900, fontFamily: 'Outfit, sans-serif', color: product.salePrice ? '#f97316' : 'var(--text-primary)' }}>
-                                ${effectivePrice.toFixed(2)}
+                            <span style={{ fontSize: '36px', fontWeight: 900, fontFamily: 'Outfit, sans-serif', color: product.salePrice ? '#f97316' : 'var(--text-primary)' }}>₹{effectivePrice.toFixed(2)}
                             </span>
                             {product.salePrice && (
                                 <>
-                                    <span className="price-original" style={{ fontSize: '20px' }}>${product.price.toFixed(2)}</span>
-                                    <span className="badge badge-sale" style={{ fontSize: '14px' }}>Save ${(product.price - product.salePrice).toFixed(2)}</span>
+                                    <span className="price-original" style={{ fontSize: '20px' }}>₹{product.price.toFixed(2)}</span>
+                                    <span className="badge badge-sale" style={{ fontSize: '14px' }}>Save ₹{(product.price - product.salePrice).toFixed(2)}</span>
                                 </>
                             )}
                         </div>

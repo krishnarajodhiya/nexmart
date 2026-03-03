@@ -68,8 +68,7 @@ export default function OrdersPage() {
                                                 <span style={{ ...statusInfo, display: 'flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, background: statusInfo.bg, color: statusInfo.color, border: 'none' }}>
                                                     {statusInfo.icon} {statusInfo.label}
                                                 </span>
-                                                <span style={{ fontWeight: 800, fontSize: '18px', fontFamily: 'Outfit, sans-serif', color: 'var(--primary-400)' }}>
-                                                    ${order.total?.toFixed(2)}
+                                                <span style={{ fontWeight: 800, fontSize: '18px', fontFamily: 'Outfit, sans-serif', color: 'var(--primary-400)' }}>₹{order.total?.toFixed(2)}
                                                 </span>
                                             </div>
                                         </div>
@@ -135,7 +134,7 @@ export default function OrdersPage() {
                                                 <p style={{ margin: '0 0 2px', fontSize: '13px', fontWeight: 600 }}>{item.name}</p>
                                                 <p style={{ margin: 0, fontSize: '12px', color: 'var(--text-muted)' }}>x{item.quantity}</p>
                                             </div>
-                                            <span style={{ fontSize: '13px', fontWeight: 700 }}>${((item.salePrice || item.price) * item.quantity).toFixed(2)}</span>
+                                            <span style={{ fontSize: '13px', fontWeight: 700 }}>₹{((item.salePrice || item.price) * item.quantity).toFixed(2)}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -144,7 +143,7 @@ export default function OrdersPage() {
                                 <div style={{ borderTop: '1px solid var(--border)', paddingTop: '16px' }}>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 700, fontSize: '16px' }}>
                                         <span>Total</span>
-                                        <span style={{ color: 'var(--primary-400)' }}>${selectedOrder.total?.toFixed(2)}</span>
+                                        <span style={{ color: 'var(--primary-400)' }}>₹{selectedOrder.total?.toFixed(2)}</span>
                                     </div>
                                 </div>
                             </div>

@@ -52,7 +52,7 @@ const HERO_SLIDES = [
 ];
 
 const TRUST_BADGES = [
-  { icon: <Truck size={22} />, title: 'Free Shipping', sub: 'On orders over $99' },
+  { icon: <Truck size={22} />, title: 'Free Shipping', sub: 'On orders over ₹99' },
   { icon: <RotateCcw size={22} />, title: '30-Day Returns', sub: 'Hassle-free returns' },
   { icon: <ShieldCheck size={22} />, title: 'Secure Payment', sub: '256-bit SSL encryption' },
   { icon: <Headphones size={22} />, title: '24/7 Support', sub: 'Always here to help' },

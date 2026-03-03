@@ -7,7 +7,7 @@ import { useAuthStore } from '@/store';
 import { authAPI } from '@/lib/api';
 import toast from 'react-hot-toast';
 
-const PERKS = ['Free shipping on orders $99+', 'Exclusive member discounts', 'Easy order tracking', 'Save wishlists forever'];
+const PERKS = ['Free shipping on orders ₹99+', 'Exclusive member discounts', 'Easy order tracking', 'Save wishlists forever'];
 
 export default function RegisterPage() {
     const router = useRouter();

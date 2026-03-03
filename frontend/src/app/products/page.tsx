@@ -76,7 +76,7 @@ export default function ProductsPage() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
                         <div>
                             <h1 style={{ margin: '0 0 4px', fontSize: '28px', fontWeight: 800, fontFamily: 'Outfit, sans-serif' }}>
-                                {search ? `Results for "${search}"` : category ? (categories.find(c => c._id === category)?.name || 'Products') : 'All Products'}
+                                {search ? `Results for "₹{search}"` : category ? (categories.find(c => c._id === category)?.name || 'Products') : 'All Products'}
                             </h1>
                             <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '14px' }}>
                                 {loading ? 'Loading...' : `${total} products found`}
@@ -174,8 +174,7 @@ export default function ProductsPage() {
                                 </span>
                             )}
                             {(minPrice || maxPrice) && (
-                                <span className="badge badge-primary" style={{ cursor: 'pointer' }} onClick={() => { setMinPrice(''); setMaxPrice(''); }}>
-                                    ${minPrice || '0'} - ${maxPrice || '∞'} <X size={12} />
+                                <span className="badge badge-primary" style={{ cursor: 'pointer' }} onClick={() => { setMinPrice(''); setMaxPrice(''); }}>₹{minPrice || '0'} - ₹{maxPrice || '∞'} <X size={12} />
                                 </span>
                             )}
                         </div>

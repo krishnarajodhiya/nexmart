@@ -43,7 +43,7 @@ export default function AdminPage() {
     if (!isAuthenticated || user?.role !== 'admin') return null;
 
     const STAT_CARDS = stats ? [
-        { label: 'Total Revenue', value: `$${stats.totalRevenue?.toFixed(0) || 0}`, icon: <DollarSign size={22} />, gradient: 'linear-gradient(135deg, #667eea, #764ba2)', change: '+12.5%' },
+        { label: 'Total Revenue', value: `₹${stats.totalRevenue?.toFixed(0) || 0}`, icon: <DollarSign size={22} />, gradient: 'linear-gradient(135deg, #667eea, #764ba2)', change: '+12.5%' },
         { label: 'Total Orders', value: stats.totalOrders || 0, icon: <ShoppingBag size={22} />, gradient: 'linear-gradient(135deg, #f093fb, #f5576c)', change: '+8.3%' },
         { label: 'Total Products', value: stats.totalProducts || 0, icon: <Package size={22} />, gradient: 'linear-gradient(135deg, #4facfe, #00f2fe)', change: '+3.2%' },
         { label: 'Total Users', value: stats.totalUsers || 0, icon: <Users size={22} />, gradient: 'linear-gradient(135deg, #43e97b, #38f9d7)', change: '+15.7%' },
@@ -148,7 +148,7 @@ export default function AdminPage() {
                                                     <p style={{ margin: '0 0 2px', fontSize: '13px', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</p>
                                                     <p style={{ margin: 0, fontSize: '11px', color: 'var(--text-muted)' }}>{p.soldCount} sold</p>
                                                 </div>
-                                                <span style={{ fontWeight: 700, fontSize: '14px', color: 'var(--primary-400)', marginLeft: '12px' }}>${(p.salePrice || p.price).toFixed(0)}</span>
+                                                <span style={{ fontWeight: 700, fontSize: '14px', color: 'var(--primary-400)', marginLeft: '12px' }}>₹{(p.salePrice || p.price).toFixed(0)}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -194,11 +194,11 @@ export default function AdminPage() {
                                                         <div>
                                                             {product.salePrice ? (
                                                                 <>
-                                                                    <span style={{ color: '#f97316', fontWeight: 700 }}>${product.salePrice}</span>
-                                                                    <span style={{ color: 'var(--text-muted)', textDecoration: 'line-through', fontSize: '12px', marginLeft: '6px' }}>${product.price}</span>
+                                                                    <span style={{ color: '#f97316', fontWeight: 700 }}>₹{product.salePrice}</span>
+                                                                    <span style={{ color: 'var(--text-muted)', textDecoration: 'line-through', fontSize: '12px', marginLeft: '6px' }}>₹{product.price}</span>
                                                                 </>
                                                             ) : (
-                                                                <span style={{ fontWeight: 700 }}>${product.price}</span>
+                                                                <span style={{ fontWeight: 700 }}>₹{product.price}</span>
                                                             )}
                                                         </div>
                                                     </td>
@@ -264,7 +264,7 @@ export default function AdminPage() {
                                                 <td><span style={{ fontWeight: 700, color: 'var(--primary-400)', fontSize: '13px' }}>{order.orderNumber}</span></td>
                                                 <td style={{ color: 'var(--text-muted)', fontSize: '13px' }}>{new Date(order.createdAt).toLocaleDateString()}</td>
                                                 <td>{order.items?.length} items</td>
-                                                <td style={{ fontWeight: 700 }}>${order.total?.toFixed(2)}</td>
+                                                <td style={{ fontWeight: 700 }}>₹{order.total?.toFixed(2)}</td>
                                                 <td>
                                                     <span style={{ padding: '4px 12px', borderRadius: '100px', fontSize: '12px', fontWeight: 600, background: order.orderStatus === 'delivered' ? 'rgba(16,185,129,0.15)' : order.orderStatus === 'shipped' ? 'rgba(6,182,212,0.15)' : order.orderStatus === 'cancelled' ? 'rgba(239,68,68,0.15)' : 'rgba(139,92,246,0.15)', color: order.orderStatus === 'delivered' ? 'var(--success)' : order.orderStatus === 'shipped' ? 'var(--accent-500)' : order.orderStatus === 'cancelled' ? '#ef4444' : 'var(--primary-400)' }}>
                                                         {order.orderStatus}

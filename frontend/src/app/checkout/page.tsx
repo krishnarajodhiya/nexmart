@@ -255,7 +255,7 @@ export default function CheckoutPage() {
                                                     {item.variant && <p style={{ margin: 0, fontSize: '11px', color: 'var(--text-muted)' }}>{item.variant}</p>}
                                                     <p style={{ margin: 0, fontSize: '12px', color: 'var(--text-muted)' }}>x{item.quantity}</p>
                                                 </div>
-                                                <span style={{ fontWeight: 700, fontSize: '14px' }}>${((item.salePrice || item.price) * item.quantity).toFixed(2)}</span>
+                                                <span style={{ fontWeight: 700, fontSize: '14px' }}>₹{((item.salePrice || item.price) * item.quantity).toFixed(2)}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -264,7 +264,7 @@ export default function CheckoutPage() {
                                         <button onClick={() => setStep('payment')} className="btn-secondary"><ArrowLeft size={16} /> Back</button>
                                         <button id="place-order-btn" onClick={handlePlaceOrder} disabled={loading} className="btn-primary" style={{ flex: 1, padding: '14px', fontSize: '15px' }}>
                                             <Lock size={16} />
-                                            {loading ? 'Placing Order...' : `Place Order — $${total.toFixed(2)}`}
+                                            {loading ? 'Placing Order...' : `Place Order — ₹${total.toFixed(2)}`}
                                         </button>
                                     </div>
                                 </div>
@@ -284,16 +284,16 @@ export default function CheckoutPage() {
                                             <p style={{ margin: 0, fontSize: '12px', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.name}</p>
                                             <p style={{ margin: 0, fontSize: '11px', color: 'var(--text-muted)' }}>x{item.quantity}</p>
                                         </div>
-                                        <span style={{ fontSize: '13px', fontWeight: 700, flexShrink: 0 }}>${((item.salePrice || item.price) * item.quantity).toFixed(2)}</span>
+                                        <span style={{ fontSize: '13px', fontWeight: 700, flexShrink: 0 }}>₹{((item.salePrice || item.price) * item.quantity).toFixed(2)}</span>
                                     </div>
                                 ))}
                                 {items.length > 3 && <p style={{ fontSize: '12px', color: 'var(--text-muted)' }}>+{items.length - 3} more items</p>}
                             </div>
                             <div style={{ borderTop: '1px solid var(--border)', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 {[
-                                    { label: 'Subtotal', value: `$${subtotal.toFixed(2)}` },
-                                    { label: 'Shipping', value: shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`, special: shipping === 0 },
-                                    { label: 'Tax (8%)', value: `$${tax.toFixed(2)}` },
+                                    { label: 'Subtotal', value: `₹${subtotal.toFixed(2)}` },
+                                    { label: 'Shipping', value: shipping === 0 ? 'FREE' : `₹${shipping.toFixed(2)}`, special: shipping === 0 },
+                                    { label: 'Tax (8%)', value: `₹${tax.toFixed(2)}` },
                                 ].map(row => (
                                     <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px' }}>
                                         <span style={{ color: 'var(--text-muted)' }}>{row.label}</span>
@@ -302,7 +302,7 @@ export default function CheckoutPage() {
                                 ))}
                                 <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border)', paddingTop: '12px', marginTop: '4px' }}>
                                     <span style={{ fontWeight: 700, fontSize: '16px' }}>Total</span>
-                                    <span style={{ fontWeight: 900, fontSize: '20px', fontFamily: 'Outfit, sans-serif', color: 'var(--primary-400)' }}>${total.toFixed(2)}</span>
+                                    <span style={{ fontWeight: 900, fontSize: '20px', fontFamily: 'Outfit, sans-serif', color: 'var(--primary-400)' }}>₹{total.toFixed(2)}</span>
                                 </div>
                             </div>
                         </div>

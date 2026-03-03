@@ -151,11 +151,10 @@ export default function ProductCard({ product }: Props) {
                     {/* Price */}
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <span className={product.salePrice ? 'price-sale' : 'price-regular'} style={{ fontSize: '18px' }}>
-                                ${effectivePrice.toFixed(2)}
+                            <span className={product.salePrice ? 'price-sale' : 'price-regular'} style={{ fontSize: '18px' }}>₹{effectivePrice.toFixed(2)}
                             </span>
                             {product.salePrice && (
-                                <span className="price-original">${product.price.toFixed(2)}</span>
+                                <span className="price-original">₹{product.price.toFixed(2)}</span>
                             )}
                         </div>
                         <button

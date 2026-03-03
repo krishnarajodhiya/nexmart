@@ -70,7 +70,7 @@ export default function CartSidebar() {
                                 <div style={{ background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.2)', borderRadius: '12px', padding: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                                     <Tag size={14} color="var(--primary-400)" />
                                     <span style={{ fontSize: '13px', color: 'var(--primary-400)' }}>
-                                        Add <strong>${(99 - subtotal).toFixed(2)}</strong> more for free shipping!
+                                        Add <strong>₹{(99 - subtotal).toFixed(2)}</strong> more for free shipping!
                                     </span>
                                 </div>
                             )}
@@ -93,8 +93,7 @@ export default function CartSidebar() {
                                                     <Plus size={12} />
                                                 </button>
                                             </div>
-                                            <span style={{ fontWeight: 700, fontSize: '14px', color: item.salePrice ? '#f97316' : 'var(--text-primary)' }}>
-                                                ${((item.salePrice || item.price) * item.quantity).toFixed(2)}
+                                            <span style={{ fontWeight: 700, fontSize: '14px', color: item.salePrice ? '#f97316' : 'var(--text-primary)' }}>₹{((item.salePrice || item.price) * item.quantity).toFixed(2)}
                                             </span>
                                         </div>
                                     </div>
@@ -114,9 +113,9 @@ export default function CartSidebar() {
                     <div style={{ padding: '16px 24px', borderTop: '1px solid var(--border)', background: 'var(--bg-card)' }}>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
                             {[
-                                { label: 'Subtotal', value: `$${subtotal.toFixed(2)}` },
-                                { label: 'Shipping', value: shipping === 0 ? <span style={{ color: 'var(--success)' }}>FREE</span> : `$${shipping.toFixed(2)}` },
-                                { label: 'Tax (8%)', value: `$${tax.toFixed(2)}` },
+                                { label: 'Subtotal', value: `₹${subtotal.toFixed(2)}` },
+                                { label: 'Shipping', value: shipping === 0 ? <span style={{ color: 'var(--success)' }}>FREE</span> : `₹${shipping.toFixed(2)}` },
+                                { label: 'Tax (8%)', value: `₹${tax.toFixed(2)}` },
                             ].map(row => (
                                 <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px' }}>
                                     <span style={{ color: 'var(--text-muted)' }}>{row.label}</span>
@@ -125,7 +124,7 @@ export default function CartSidebar() {
                             ))}
                             <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border)', paddingTop: '10px', marginTop: '4px' }}>
                                 <span style={{ fontWeight: 700, fontSize: '16px' }}>Total</span>
-                                <span style={{ fontWeight: 700, fontSize: '18px', background: 'var(--gradient-primary)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>${total.toFixed(2)}</span>
+                                <span style={{ fontWeight: 700, fontSize: '18px', background: 'var(--gradient-primary)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>₹{total.toFixed(2)}</span>
                             </div>
                         </div>
                         <Link href="/checkout" onClick={closeCart}>
